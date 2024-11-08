@@ -1,0 +1,15 @@
+version: "3.8"
+services: 
+  cars-api:
+    image: sarahabdulle/lbg-cars-api
+    build: ./cars-api
+    ports:
+      - target: 8080
+        published: 8081
+  front-end:
+    image: sarahabdulle/lbg-cars-frontend
+    build:
+      context: ./frontend
+    ports:
+      - target: 80
+        published: 80
